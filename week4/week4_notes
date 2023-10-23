@@ -1,0 +1,3 @@
+Header files
+When using compile first
+gcc utils.h code.c -o code
