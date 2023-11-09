@@ -9,10 +9,9 @@ def valid_puzzle(puzzle: list) -> bool:
     length = len(puzzle[0])
     output = True
     for x in puzzle:
-        if(len(x) != length):
+        if (len(x) != length):
             output = False
-    print(len(puzzle[0]))
-    if(len(puzzle[0]) <= 1):
+    if (len(puzzle[0]) <= 1):
         output = False
     return output
 
@@ -47,9 +46,9 @@ def highest_count_items(data: str) -> list:
             listofcount.append(strlist.count(x))
             dictionaryofcount[x] = strlist.count(x)
         highestcount = max(listofcount)
-        for x,y in dictionaryofcount.items():
-            if(y==highestcount):
-                output.append([x,y])
+        for x, y in dictionaryofcount.items():
+            if (y == highestcount):
+                output.append([x, y])
     return output
 
 
@@ -68,8 +67,8 @@ def valid_char_in_string(popList: list, charSet: list) -> bool:
 
 def total_price(unit: int) -> float:
     output = 0
-    output = 5 * (unit//6) + 1.25 * (unit%6)
-    if output>= 20:
+    output = 5 * (unit // 6) + 1.25 * (unit % 6)
+    if output >= 20:
         output = output * 0.9
     return output
 
