@@ -18,6 +18,7 @@ int main()
     sscanf(line, " %s ", filename);
 
     char month[10];
+    char str[20];
     char delim[] = "-";
     int highest;
     int lowest;
@@ -129,7 +130,7 @@ int main()
             printf("Enter the month you wish to see: ");
             fgets(line, buffer_size, stdin);
             sscanf(line, " %s ", month);
-                        counter = 0;
+            counter = 0;
             while (fgets(line, buffer_size, input))
             {
                 // split up the line and store it in the right place
@@ -139,10 +140,10 @@ int main()
             }
             for (int i = 0; i < counter; i++)
             {
-                char str[] = daily_readings[i].date;
-                char *ptr = strtok(str,delim); 
+                char *ptr = strtok(daily_readings[counter].date,delim); 
                 ptr = strtok(NULL,delim);
-                if(strcmp(str,month) == 0)
+                printf("%s",ptr);
+                if(strcmp(ptr,month) == 0)
                 {            
                     printf("%s - Blood iron: %.1f\n", daily_readings[i].date, daily_readings[i].bloodIron);
                 }
