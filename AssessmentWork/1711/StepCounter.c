@@ -79,22 +79,27 @@ int main()
     char input;
     char filename[100] = " ";
 
-    do
+    while(1)
     {
         menu();
-        scanf("%c",&input);
-        input |= ' '; // Convert input to lowercase
+        input = getchar();
+        while (getchar() != '\n');
+        printf("%c",input);
         switch (input)
         {
         case 'a':
+        case 'A':
             printf("Input Filename: ");
             scanf("%s",filename);
-            if(FileExists(file,filename) == 1)
+            file = fopen(filename,"r");
+            if (file == NULL)
             {
+                printf("Error opening file\n");
                 return 1;
             }
             break;
         case 'b':
+        case 'B':
             if(FileExists(file,filename) == 0)
             {
                 file = fopen(filename,"r");
@@ -115,20 +120,26 @@ int main()
             }
             break;
         case 'c':
+        case 'C':
             break;
         case 'd':
+        case 'D':
             break;
         case 'e':
+        case 'E':
             break;
         case 'f':
+        case 'F':
             break;
         case 'q':
+        case 'Q':
+            return 0;
             break;
         default:
             printf("Invalid choice. Try again.\n");
             break;
         }
-    } while (input != 'q');
+    }
     
 }
 
